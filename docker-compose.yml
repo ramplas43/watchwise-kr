@@ -9,6 +9,7 @@ services:
       ports:
         - "127.0.0.1:5000:5000"
       volumes:
+        - ./:/app
         - changedetection-data:/datastore
 # Configurable proxy list support, see https://github.com/dgtlmoon/changedetection.io/wiki/Proxy-configuration#proxy-list-support
 #        - ./proxies.json:/datastore/proxies.json
