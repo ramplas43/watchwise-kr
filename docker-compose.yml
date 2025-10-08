@@ -1,8 +1,13 @@
 services:
     changedetection:
-      image: ghcr.io/dgtlmoon/changedetection.io
+      build:
+        context: .
+        dockerfile: Dockerfile
+      image: watchwise-kr:dev
       container_name: changedetection
       hostname: changedetection
+      ports:
+        - "127.0.0.1:5000:5000"
       volumes:
         - changedetection-data:/datastore
 # Configurable proxy list support, see https://github.com/dgtlmoon/changedetection.io/wiki/Proxy-configuration#proxy-list-support
@@ -85,8 +90,6 @@ services:
   
       # Comment out ports: when using behind a reverse proxy , enable networks: etc.
       # Mac users! Use "127.0.0.1:5050:5000" (port 5050) so theres no conflict with Airplay etc. (https://github.com/dgtlmoon/changedetection.io/issues/3401)
-      ports:
-        - 127.0.0.1:5000:5000
       restart: unless-stopped
 
      # Used for fetching pages via WebDriver+Chrome where you need Javascript support.
