@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "WatchWise - 웹페이지 변경 알림 서비스",
+    "short_name": "WatchWise",
     "icons": [
         {
             "src": "android-chrome-192x192.png",
