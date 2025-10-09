@@ -22,11 +22,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static_content', group='favicons', filename='favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static_content', group='favicons', filename='favicon-16x16.png')}}">
     <link rel="manifest" href="{{url_for('static_content', group='favicons', filename='site.webmanifest')}}">
-    <link rel="mask-icon" href="{{url_for('static_content', group='favicons', filename='safari-pinned-tab.svg')}}" color="#5bbad5">
+    <link rel="mask-icon" href="{{url_for('static_content', group='favicons', filename='safari-pinned-tab.svg')}}" color="#5F6FFF">
     <link rel="shortcut icon" href="{{url_for('static_content', group='favicons', filename='favicon.ico')}}">
-    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileColor" content="#07111f">
     <meta name="msapplication-config" content="favicons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#0a0a0a">
     <script>
         const csrftoken="{{ csrf_token() }}";
         const socketio_url="{{ get_socketio_path() }}/socket.io";
@@ -39,6 +39,16 @@
     <script src="{{url_for('static_content', group='js', filename='socket.io.min.js')}}"></script>
     <script src="{{url_for('static_content', group='js', filename='realtime.js')}}" defer></script>
     {% endif %}
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org", 
+        "@type": "Organization", 
+        "name": "WatchWise", 
+        "url": "https://watchwise.kr", 
+        "logo": "https://watchwise.kr/static/favicons/logo-circle.png"
+      }
+    </script>
   </head>
 
   <body class="{{extra_classes}}">
